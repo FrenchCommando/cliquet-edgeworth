@@ -181,14 +181,7 @@ Following term of the expansion
 
 $$\frac{\lambda_4}{4!} He_4(z) + \frac{\lambda_3^2}{2!(3!)^2} He_6(z) = \frac{\lambda_4}{24} He_4(z) + \frac{\lambda_3^2}{72} He_6(z)$$
 
-$$\frac{\lambda_5}{5!} He_5(z) 
-+ \frac{\lambda_3}{3!}\frac{\lambda_4}{4!} He_7(z) 
-+ \frac{\lambda_3^3}{3!(3!)^3} He_9(z) 
-= 
-\frac{\lambda_5}{120} He_5(z) 
-+ \frac{\lambda_3 \lambda_4}{144}He_7(z) 
-+ \frac{\lambda_3^3}{1296} He_9(z)
-$$
+$$\frac{\lambda_5}{5!} He_5(z) + \frac{\lambda_3}{3!}\frac{\lambda_4}{4!} He_7(z) + \frac{\lambda_3^3}{3!(3!)^3} He_9(z) = \frac{\lambda_5}{120} He_5(z) + \frac{\lambda_3 \lambda_4}{144}He_7(z) + \frac{\lambda_3^3}{1296} He_9(z)$$
 
 ### Integration
 
