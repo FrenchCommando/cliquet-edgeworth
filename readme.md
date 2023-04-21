@@ -106,7 +106,7 @@ $$C_\mathcal{I} = \int_{\lbrace
             - (\sum_{i \in \mathcal{I}} c_i)
             - r \right\rbrace\right) \; \phi_Y(x) \; \mathrm{d}x
 $$
-- 
+ 
 - $\phi_Y$ is the probability density function of the sum of truncated log-normals
 
 ### Cumulants
