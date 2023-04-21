@@ -32,8 +32,8 @@ where $z_i \sim \mathcal{N}(0, 1)$, standard Gaussian
 $$
 \min\left(S_i - 1, c_i\right) \sim
 \begin{cases}
-c_i & \mathrm{with \; probability} \; p_i\\
-X_i -1& \mathrm{with \; probability} \; 1 - p_i
+c_i & \mathrm{with \ probability} \ p_i\\
+X_i -1& \mathrm{with \ probability} \ 1 - p_i
 \end{cases}
 $$
 
@@ -66,7 +66,7 @@ $$1 - p_i = \Phi(g_i(1+c_i))$$
 ### Truncated log-normals
 
 Density function
-$$\phi_i(x) = \frac{1}{1- p_i} \phi(x) f_i(x) \; \mathbb{1}_{f_i(x) < 1 + c_i}$$
+$$\phi_i(x) = \frac{1}{1- p_i} \phi(x) f_i(x) \  \mathbb{1}_{f_i(x) < 1 + c_i}$$
 
 - $\phi$ is the gaussian density function
 - $f_i(x) = \exp \left\lbrace -\frac12 \sigma_i^2 + \sigma_i x \right\rbrace$
@@ -104,7 +104,7 @@ $$C_\mathcal{I} = \int_{\lbrace
     \left(x - \left\lbrace
             (\sum_{i \notin \mathcal{I}} 1)
             - (\sum_{i \in \mathcal{I}} c_i)
-            - r \right\rbrace\right) \; \phi_Y(x) \; \mathrm{d}x
+            - r \right\rbrace\right) \  \phi_Y(x) \  \mathrm{d}x
 $$
  
 - $\phi_Y$ is the probability density function of the sum of truncated log-normals
@@ -196,15 +196,15 @@ $$C_\mathcal{I} \sim \int_a^b \frac{1}{\sigma} (x-a) \phi(z)\left[1 + \mathcal{E
 
 $$
 \begin{align*}
-\mathcal{I}_0 &= \int_a^b \frac{1}{\sigma} (x-a) \phi(z) \; \mathrm{d} x \\
+\mathcal{I}_0 &= \int_a^b \frac{1}{\sigma} (x-a) \phi(z) \  \mathrm{d} x \\
 &= \sigma  \cdot(\phi(z_a) - \phi(z_b)) + \left(\mu - a\right) \cdot (\Phi(z_b) - \Phi(z_a))
 \end{align*}
 $$
 
 $$
 \begin{align*}
-\mathcal{I}_p =& \int_a^b \frac{1}{\sigma} (x-a) \phi(z) He_p(z) \; \mathrm{d} x \\
-=& \; \sigma  \cdot(\phi(z_b)He_{p-2}(z_b) - \phi(z_a)He_{p-2}(z_a)) \\ 
+\mathcal{I}_p =& \int_a^b \frac{1}{\sigma} (x-a) \phi(z) He_p(z) \  \mathrm{d} x \\
+=& \  \sigma  \cdot(\phi(z_b)He_{p-2}(z_b) - \phi(z_a)He_{p-2}(z_a)) \\ 
 &- (b - a) \cdot \phi(z_b)He_{p-1}(z_b)
 \end{align*}
 $$
