@@ -2,16 +2,7 @@ This document introduces an analytical method to compute prices of cliquet in Bl
 
 # Cliquet Payoff
 
-$$Cliquet = \max\left(
-    0,
-    \sum_i
-    \left\{
-        \min\left(
-        S_i - 1, c_i
-        \right)
-    \right\}
-    + r
-    \right)$$
+$$Cliquet = \max\left(0, \sum_i \left\{\min\left(S_i - 1, c_i \right) \right\} + r \right)$$
 
 - $S_i$ is the return on period $i$
 - $c_i$ is the cap for the return on period $i$ (they are usually the same for each period)
