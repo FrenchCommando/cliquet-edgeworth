@@ -2,12 +2,12 @@ This document introduces an analytical method to compute prices of cliquet in Bl
 
 # Cliquet Payoff
 
-$$Cliquet = \max\left(0, \sum_i \left\{\min\left(S_i - 1, c_i \right) \right\} + r \right)$$
+$$Cliquet = \max\left(0, \sum_i \left\lbrace\min\left(S_i - 1, c_i \right) \right\rbrace + r \right)$$
 
 - $S_i$ is the return on period $i$
 - $c_i$ is the cap for the return on period $i$ (they are usually the same for each period)
 - $r$ is the realized returns, it conceptually represents the sum of capped returns for the previous periods - it can also be used to adjust the floor
-- $i\in \{1, \dots, n\}$ is the index of the period, $n$ is the number of periods (one period is typically a month or a year)
+- $i\in \lbrace 1, \dots, n\rbrace$ is the index of the period, $n$ is the number of periods (one period is typically a month or a year)
 
 # Model
 
@@ -18,10 +18,10 @@ but no smile.
 
 - define $\sigma^2_i$ as the total variance on period $i$ - to save on notations, we don't use annualized volatilities
 
-$$S_i \sim \exp \left\{ 
+$$S_i \sim \exp \left\lbrace 
     -\frac12 \sigma_i^2
     + \sigma_i z_i
-\right\}$$
+\right\rbrace$$
 
 where $z_i \sim \mathcal{N}(0, 1)$, standard Gaussian
 
@@ -40,7 +40,7 @@ $$
 - $p_i$ is the probability that the return hits the cap, it can be computed explicitly
 - $X_i$ is a truncated log-normal
 
-$$\mathbb{E}(Cliquet) =\sum_{\mathcal{I} \subset \mathcal{P}(\{1, \dots,n\})}\left\{
+$$\mathbb{E}(Cliquet) =\sum_{\mathcal{I} \subset \mathcal{P}(\lbrace 1, \dots,n\rbrace)}\left\lbrace
     \prod_{i \in \mathcal{I}} p_i \prod_{i \notin \mathcal{I}} (1-p_i)
     \cdot
     \mathbb{E}\left[
@@ -51,7 +51,7 @@ $$\mathbb{E}(Cliquet) =\sum_{\mathcal{I} \subset \mathcal{P}(\{1, \dots,n\})}\le
         + r
     \right)
     \right]
-\right\}
+\right\rbrace
 $$
 
 ### Probability formula
@@ -69,14 +69,14 @@ Density function
 $$\phi_i(x) = \frac{1}{1- p_i} \phi(x) f_i(x) \; \mathbb{1}_{f_i(x) < 1 + c_i}$$
 
 - $\phi$ is the gaussian density function
-- $f_i(x) = \exp \left\{-\frac12 \sigma_i^2 + \sigma_i x \right\}$
+- $f_i(x) = \exp \left\lbrace -\frac12 \sigma_i^2 + \sigma_i x \right\rbrace$
 
 #### Moments
 
 $$\mu_{i,\alpha} = \mathbb{E}\left[ X_i^\alpha \right]$$
 
 $$\mu_{i,\alpha} = 
-\exp\left\{\frac12 \sigma_i^2 \alpha (\alpha - 1)\right\} 
+\exp\left\lbrace\frac12 \sigma_i^2 \alpha (\alpha - 1)\right\rbrace 
 \frac{\Phi(g_i(1+c_i) - \sigma_i \alpha)}{\Phi(g_i(1+c_i))}
 $$
 
@@ -97,14 +97,14 @@ $$
 
 - Calling $Y=\sum_{i \notin \mathcal{I}} X_i$,
 
-$$C_\mathcal{I} = \int_{\{
+$$C_\mathcal{I} = \int_{\lbrace
             (\sum_{i \notin \mathcal{I}} 1)
             - (\sum_{i \in \mathcal{I}} c_i)
-            - r \}}^{\sum_{i \notin \mathcal{I}} (1+c_i)}
-    \left(x - \left\{
+            - r \rbrace}^{\sum_{i \notin \mathcal{I}} (1+c_i)}
+    \left(x - \left\lbrace
             (\sum_{i \notin \mathcal{I}} 1)
             - (\sum_{i \in \mathcal{I}} c_i)
-            - r \right\}\right) \; \phi_Y(x) \; \mathrm{d}x
+            - r \right\rbrace\right) \; \phi_Y(x) \; \mathrm{d}x
 $$
 - 
 - $\phi_Y$ is the probability density function of the sum of truncated log-normals
@@ -219,7 +219,7 @@ $$
 
 ### The simple case where the sum is one single element is evaluated analytically
 
-$\{1,\dots,n\} \setminus \mathcal{I} = \{i\}$
+$\lbrace 1,\dots,n\rbrace \setminus \mathcal{I} = \lbrace i\rbrace$
 
 $K=1 - (\sum_{j \in \mathcal{I}} c_j) - r$
 
